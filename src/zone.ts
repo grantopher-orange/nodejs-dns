@@ -42,35 +42,11 @@ import {InstanceResponseCallback} from '@google-cloud/common';
 import {GetResponse} from '@google-cloud/common/build/src/service-object';
 
 /**
- * Config to set for the change.
- *
- * @typedef {object} CreateChangeRequest
- * @property {Record|Record[]} add {@link Record} objects to add to this zone.
- * @property {Record|Record[]} delete {@link Record} objects to delete
- *     from this zone. Be aware that the resource records here must match
- *     exactly to be deleted.
- */
-export interface CreateChangeRequest {
-  add?: Record | Record[];
-  delete?: Record | Record[];
-}
-
-/**
  * @typedef {array} CreateChangeResponse
  * @property {Change} 0 A {@link Change} object.
  * @property {object} 1 The full API response.
  */
 export type CreateChangeResponse = [Change, Metadata];
-
-/**
- * @callback CreateChangeCallback
- * @param {?Error} err Request error, if any.
- * @param {?Change} change A {@link Change} object.
- * @param {object} apiResponse The full API response.
- */
-export interface CreateChangeCallback {
-  (err: Error | null, change?: Change, apiResponse?: Metadata): void;
-}
 
 /**
  * @typedef {array} DeleteZoneResponse
